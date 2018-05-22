@@ -1,0 +1,12 @@
+<launch>
+  <arg name="razor_config_file" default="$(find razor_imu_9dof)/config/my_razor.yaml"/>
+  <node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node" output="screen">
+    <rosparam file="$(arg razor_config_file)" command="load"/>
+  </node>
+
+  <node name="cq_camera" pkg="cq_camera" type="cq_camera_node" output="screen" launch-prefix="sudo -E">
+       <param name="trig_mode" type="string" value="external" />
+       <param name="frame_rate" type="int" value="25" />
+  </node>
+
+</launch>

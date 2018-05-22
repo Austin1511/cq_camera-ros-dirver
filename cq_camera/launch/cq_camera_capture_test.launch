@@ -1,0 +1,7 @@
+<launch>
+ <node name="cq_camera" pkg="cq_camera" type="cq_camera_node" output="screen" launch-prefix="sudo -E">
+    <param name="trig_mode" type="string" value="auto" />
+    <param name="frame_rate" type="int" value="25" />
+ </node>
+                       
+ </launch>
